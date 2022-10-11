@@ -16,6 +16,7 @@ export default class {
     if (this.isSupercharge()) { this.el.classList.add('supercharge'); }
     if (this.isWhiteDwarf())  { this.el.classList.add('white-dwarf'); }
     if (this.isBlackHole())   { this.el.classList.add('black-hole'); }
+    this.el.classList.add('Class_' + this.starClass);
   }
 
   isScoopable() {

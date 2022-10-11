@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Elite Dangerous - Route Widget</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#ff6700">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Elite Dangerous : Route Widget">
+    <meta name="application-name" content="Elite Dangerous : Route Widget">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="stylesheet" type="text/css" href="styles/vars.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/base.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/info.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/route.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/gui.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/handles.css"/>
+
+    <style type="text/css">
+    	body {
+    		display: block !important;
+    	}
+		#clock {
+			width: 15%;
+			height: 15%;
+			background-color: #1C1C28;
+			text-align: center;
+			color: #FEFEFE;
+			font-family: sans-serif;
+			overflow: hidden;
+		}
+
+		canvas {
+			object-fit: contain;
+			width: 60%;
+			margin: 0px auto;
+			display: block;
+		}
+    	
+    </style>
+    <script type="text/javascript">
+		let canvas;
+		let ctx;
+
+		// set the start point of the hour, minute and second hand to top
+		const threePIByTwo = (3 * Math.PI) / 2;
+		console.log("PI=" + threePIByTwo);
+
+		let amOrPm = 'AM';
+
+		const canvasBg = '#1C1C28';
+
+		// Define colors for hour, minute and second hand
+		const hourActiveColor = '#39D98A',
+			minuteActiveColor = '#3E7BFA',
+			secondActiveColor = '#FDAC42';
+
+		// Define inactive colors for hour, minute and second hand
+		const hourInactiveColor = '#3C4043',
+			minuteInactiveColor = '#2E3134',
+			secondInactiveColor = '#282A2D';
+
+		const timerBg = '#282A2D';
+
+		function init()
+		{
+			console.log("Init");
+ 			canvas = document.getElementById('canvas');
+ 			ctx = canvas.getContext('2d');
+			canvas.width = document.documentElement.clientWidth - 35;
+			canvas.height = document.documentElement.clientHeight - 45;
+
+			// This calls the draw function repeatedly at a rate of 60 times per second
+			window.requestAnimationFrame(draw);	
+		}
+
+		function draw()
+		{
+			// Finding center point of canvas
+			const centerX = canvas.width / 2,
+				centerY = canvas.height / 2;
+
+			const date = new Date();
+
+			let hr = date.getHours();
+			let min = date.getMinutes();
+			let sec = date.getSeconds();
+			let ms = date.getMilliseconds();
+
+			if(hr > 12)
+			{
+				amOrPm = 'PM';
+				hr -= 12;
+			}
+
+			/* Defines how much radians each hand should move */
+			let radH = 0.000008333 * ( ( hr * 60 * 60 * 1000 ) + ( min * 60 * 1000 ) + ( sec * 1000 ) + ms );
+			let radM = 0.0001 * ( ( min * 60 * 1000 ) + ( sec * 1000 ) + ms );
+			let radS = 0.006 * ( ( sec * 1000 ) + ms );
+
+
+			// Draw Canvas
+			drawRect(0, 0, canvas.width, canvas.height, canvasBg);
+
+			// Hour Hand
+			drawCircle(centerX, centerY, 110, 0, 360 , false, hourInactiveColor, 'stroke', 90);
+			drawCircle(centerX, centerY, 110, threePIByTwo, rad(radH) + threePIByTwo, false, hourActiveColor, 'stroke', 90);
+
+			// Minute Hand
+			drawCircle(centerX, centerY, 180, 0, 360, false, minuteInactiveColor, 'stroke', 50);
+			drawCircle(centerX, centerY, 180, threePIByTwo, rad(radM) + threePIByTwo, false, minuteActiveColor, 'stroke', 50);
+
+			// Second Hand
+			drawCircle(centerX, centerY, 220, 0, 360, false, secondInactiveColor, 'stroke', 30);
+			drawCircle(centerX, centerY, 220, threePIByTwo, rad(radS) + threePIByTwo, false, secondActiveColor, 'stroke', 30);
+
+			// Digital Timer
+			drawCircle(centerX, centerY, 90, 0, 360, false, timerBg, 'fill', '50');
+			drawText(`${hr.toString().padStart(2, "0")}:${min.toString().padStart(2, "0")} ${amOrPm}`, canvas.width / 2 - 60, canvas.height / 2 + 15, '#ffffff', '28px');
+
+			window.requestAnimationFrame(draw);
+		}
+
+//		init();
+
+		// Convert degree to radians
+		function rad(deg){
+			return  (Math.PI / 180) * deg;
+		}
+
+		function drawText(text, x, y, color, size) {
+			ctx.font = `${size} "Poppins"`;
+			ctx.fillStyle = color;
+			ctx.fillText(text, x, y);
+		}
+
+		function drawRect(x, y, width, height, color) {
+			ctx.fillStyle = color;
+			ctx.fillRect(x, y, width, height);
+		}
+
+		function drawArc(x, y, radius, start, end, clockwise)
+		{
+			ctx.beginPath();
+			ctx.arc(x, y, radius, start, end, clockwise);
+		}
+
+		function drawCircle(x, y, radius, start, end, clockwise, color, type, thickness) {
+			switch (type) {
+				case 'fill':
+					ctx.fillStyle = color;
+					drawArc(x, y, radius, start, end, clockwise)
+					ctx.fill();
+					break;
+				case 'stroke':
+					ctx.strokeStyle = color;
+					ctx.lineWidth = thickness;
+					drawArc(x, y, radius, start, end, clockwise)
+					ctx.stroke();
+					break
+			}
+		}
+
+		window.onload = init;
+
+    </script>
+  </head>
+
+  <body>
+	<h3>ROUTE.HTML</h3>
+	<div id="check"><p>Check</p>
+	</div>
+	<div id="Clock">
+		<canvas id="canvas"></canvas>
+	</div>
+
+
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="_page.js"></script>
+  </body>
+</html>

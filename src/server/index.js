@@ -3,6 +3,40 @@ const YAML        = require('yaml')
 var path          = require("path")
 const express     = require('express');
 const expressApp  = express();
+/*
+const helmet = require('helmet');
+expressApp.use(
+  helmet.contentSecurityPolicy({
+    useDefaults: false,
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc:  ["'self'"],
+      objectSrc:  ["'self'"],
+      upgradeInsecureRequests: [],
+    },
+  })
+);
+*/
+/*
+expressApp.use(function(req, res, next) {
+  res.setHeader("Content-Security-Policy", " default-src *; script-src 'self' ");
+    return next();
+});
+*/
+
+expressApp.use(function (req, res, next) {
+  res.set({
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+    "Access-Control-Allow-Methods": "GET, POST, PATCH, DELETE, OPTIONS",
+    "Content-Security-Policy": "default-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'",
+    "X-Content-Security-Policy": "default-src *",
+    "X-WebKit-CSP": "default-src *"
+  })
+  next();
+});
+
+
 const server      = require('http').createServer(expressApp);
 const { Server }  = require('socket.io');
 const io          = new Server(server);
@@ -19,19 +53,25 @@ const WindowManager = require('./WindowManager');
 
 const customConfigPath = process.argv[2];
 
-let edsmExpedition;
+let UseEdsmExpedition = false;
+
+
+function DebugLog(dbgStr) {
+	console.log('- - - index.js - ', dbgStr);
+}
+
+const UserDataPath = customConfigPath ? customConfigPath : app.getPath("userData");
 
 /*
  * Paths
  */
 const paths = {
   configSample: `${__dirname}/../config.sample.yml`,
-  config:       customConfigPath
-                ? customConfigPath
-                : `${app.getPath("userData")}/config.yml`,
-  stats:        `${app.getPath("userData")}/stats.json`,
+  config:       UserDataPath + `/config.yml`,
+  stats:        UserDataPath + `/stats.json`,
   client:       `${__dirname}/../client`,
 }
+DebugLog('paths.config:'+ paths.config);
 
 if (!fs.existsSync(paths.config)) {
   fs.copyFileSync(paths.configSample, paths.config, fs.constants.COPYFILE_EXCL);
@@ -43,6 +83,9 @@ const homedir     = require('os').homedir();
 paths.eliteLogDir = config.server.eliteLogDir.replace('%userprofile%', homedir);
 paths.route       = paths.eliteLogDir + '/NavRoute.json';
 paths.status      = paths.eliteLogDir + '/Status.json';
+DebugLog('paths.route:'+ paths.route);
+
+if (customConfigPath) { config.client.autohide.delay = 0};
 
 function saveConfig() {
   fs.writeFileSync(paths.config, YAML.stringify(config));
@@ -51,14 +94,18 @@ function saveConfig() {
 /*
  * Stats
  */
+DebugLog('==>Stats');
 const stats    = new Stats(paths.stats, config.server.stats.historyLimit, config.server.stats.durationLimit);
 stats.onUpdate = stats => io.emit('stats', stats);
+DebugLog('<==Stats');
 
 
 /*
  * Route
  */
+DebugLog('==>Route');
 const route   = new Route(paths.route);
+DebugLog('==>gameLog');
 const gameLog = new GameLog(paths.eliteLogDir);
 
 route.onChange = steps => {
@@ -67,14 +114,13 @@ route.onChange = steps => {
   stats.update();
   io.emit('route', steps);
 };
-
 route.watchFile();
+DebugLog('<==Route');
 
 
 /*
  * GameLog
  */
-
 gameLog.onShipChange = ship => {
   stats.changeShip(ship.shipId);
   stats.shipMaxJumpRange = ship.maxJumpRange;
@@ -82,7 +128,7 @@ gameLog.onShipChange = ship => {
 }
 
 gameLog.onJump = nextSystem => {
-  // console.log('jumping:', nextSystem);
+  // DebugLog('jumping:' + nextSystem);
   const step = route.getStepByName(nextSystem.name);
   if (step) {
     stats.jump(step.StarPos);
@@ -93,7 +139,7 @@ gameLog.onJump = nextSystem => {
 }
 
 gameLog.onLocate = system => {
-  // console.log('locate:', system);
+  // DebugLog('locate: ' + system);
   const step = route.getStepByName(system.name);
   if (step) {
     stats.setPosition(step.StarPos);
@@ -102,17 +148,19 @@ gameLog.onLocate = system => {
   }
   io.emit('locate', system.name);
 
-  if (edsmExpedition && edsmExpedition.isFetched) {
+  if (UseEdsmExpedition && edsmExpedition.isFetched) {
     io.emit('expedition:progression', edsmExpedition.getProgression(system.position));
   }
 }
 
 gameLog.watchLog();
+DebugLog('<==gameLog');
 
 
 /*
  * GameStatus
  */
+DebugLog('==>GameStatus');
 const gameStatus = new GameStatus(paths.status);
 
 gameStatus.onChange = gameStatus => {
@@ -120,28 +168,32 @@ gameStatus.onChange = gameStatus => {
 };
 
 gameStatus.watchFile();
+DebugLog('<==GameStatus');
 
 
 
 /*
  * EdsmExpedition
  */
-if (config.server.edsmExpeditionUrl) {
-  edsmExpedition = new EdsmExpedition(config.server.edsmExpeditionUrl);
-  edsmExpedition.fetchWaypoints().then(waypoints => {
-    io.emit('expedition:waypoints', waypoints);
+if (UseEdsmExpedition) {
+  DebugLog('==>EdsmExpedition');
+  if (config.server.edsmExpeditionUrl) {
+    edsmExpedition = new EdsmExpedition(config.server.edsmExpeditionUrl);
+    edsmExpedition.fetchWaypoints().then(waypoints => {
+      io.emit('expedition:waypoints', waypoints);
 
-    if (gameLog.currentSystem) {
-      io.emit('expedition:progression', edsmExpedition.getProgression(gameLog.currentSystem.position));
-    }
-  });
+      if (gameLog.currentSystem) {
+        io.emit('expedition:progression', edsmExpedition.getProgression(gameLog.currentSystem.position));
+      }
+    });
+  }
+  DebugLog('<==EdsmExpedition');
 }
-
-
 
 /*
  * Socket
  */
+DebugLog('==>Socket');
 let windowManager;
 
 
@@ -150,7 +202,7 @@ io.on('connection', (socket) => {
 
   socket.on('clientInfo', info => {
     clientInfo = info;
-    console.log(new Date(), 'socket: user connected from ', clientInfo.origin, '(', clientInfo.platform, ')');
+    DebugLog('socket: user connected from ' + clientInfo.origin + '(' + clientInfo.platform + ')');
   });
 
   socket.emit('config', config.client);
@@ -166,7 +218,7 @@ io.on('connection', (socket) => {
     if (gameLog.currentSystem)    { socket.emit('locate', gameLog.currentSystem.name); }
   }
 
-  if (edsmExpedition && edsmExpedition.waypoints) {
+  if (UseEdsmExpedition && edsmExpedition.waypoints) {
     socket.emit('expedition:waypoints', edsmExpedition.waypoints);
 
     if (gameLog.currentSystem) {
@@ -175,7 +227,7 @@ io.on('connection', (socket) => {
   }
 
   socket.on('config', clientConfig => {
-    console.log(new Date(), 'config: receive');
+    DebugLog('config: receive');
     socket.broadcast.emit('config', clientConfig);
     config.client = clientConfig;
     saveConfig();
@@ -183,9 +235,9 @@ io.on('connection', (socket) => {
 
   socket.on('disconnect', () => {
     if (clientInfo) {
-      console.log(new Date(), 'socket: user disconnected from ', clientInfo.origin, '(', clientInfo.platform, ')');
+      DebugLog('socket: user disconnected from ' + clientInfo.origin + '(' + clientInfo.platform + ')');
     } else {
-      console.log(new Date(), 'socket: user disconnected');
+      DebugLog('socket: user disconnected');
     }
   });
 
@@ -203,19 +255,34 @@ io.on('connection', (socket) => {
     socket.broadcast.emit('unlock');
   });
 });
+DebugLog('<==Socket');
 
 
 /*
  * Server
  */
+DebugLog('==>Server');
 expressApp.use(express.static(paths.client));
+/*
+expressApp.use(function (req, res, next) {
+  res.set({
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+    "Access-Control-Allow-Methods": "GET, POST, PATCH, DELETE, OPTIONS",
+    "Content-Security-Policy": "default-src * 'unsafe-inline'; script-src 'self' 'unsafe-inline'",
+    "X-Content-Security-Policy": "default-src *",
+    "X-WebKit-CSP": "default-src *"
+  })
+  next();
+});
+*/
 
 server.listen(3000, () => {
-  console.log(new Date(), 'server: listening on *:3000');
-  console.log(  '\n    Go to   http://localhost:3000      to open the widget on this device,');
+  DebugLog('server: listening on *:3000');
+  DebugLog('\n    Go to   http://localhost:3000      to open the widget on this device,');
 
   utils.getLocalIp().then(localIp => {
-    console.log(  `    or to   http://${localIp}:3000   to open the widget from another device on the local network\n`)
+    DebugLog(`    or to   http://${localIp}:3000   to open the widget from another device on the local network\n`)
 
     if (app) {
       if (!config.windows) {
@@ -230,7 +297,10 @@ server.listen(3000, () => {
         saveConfig();
       };
     } else {
+      config.client.autohide.enabled = false;
+      config.client.autohide.delay = 0;
       open('http://localhost:3000/widgets/route');
     }
   });
 });
+DebugLog('<==Server');

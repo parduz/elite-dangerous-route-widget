@@ -1,5 +1,10 @@
 const fs = require('fs');
 
+function DebugLog(dbgStr) {
+	//console.log( new Date(), '- - - GameStatus.js - ', dbgStr);
+	console.log('- - - GameStatus.js - ', dbgStr);
+}
+
 module.exports = class Status {
   filename;
   status;
@@ -18,7 +23,7 @@ module.exports = class Status {
       if (watchTimeout) { clearTimeout(watchTimeout); } // prevent duplicated watch notifications
 
       watchTimeout = setTimeout(() => {
-        //console.log(new Date(), 'watchStatus: change detected');
+        //DebugLog('watchStatus: change detected');
         this.updateFromFile();
       }, 100);
     });
@@ -27,7 +32,7 @@ module.exports = class Status {
   updateFromFile() {
     try {
       this.status = JSON.parse(fs.readFileSync(this.filename));
-      //console.log(new Date(), 'status:', this.status);
+      //DebugLog('status:' + this.status);
       this.update();
 
     } catch(e) {

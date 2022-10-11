@@ -3,6 +3,12 @@ const glob        = require('glob');
 const lineReader  = require('line-reader');
 const StarSystem  = require('./StarSystem');
 
+function DebugLog(dbgStr) {
+	//console.log( new Date(), '- - - GameLog.js - ', dbgStr);
+	console.log('- - - GameLog.js - ', dbgStr);
+}
+
+
 module.exports = class GameLog {
   eliteLogDir;
   isJumping = false;
@@ -30,7 +36,7 @@ module.exports = class GameLog {
       if (watchTimeout) { clearTimeout(watchTimeout); } // prevent duplicated watch notifications
 
       watchTimeout = setTimeout(() => {
-        //console.log(new Date(), 'watchLog: change detected');
+        //DebugLog('watchLog: change detected');
         this.watchLogFromMostRecentFile();
       }, 100);
     });
@@ -44,13 +50,13 @@ module.exports = class GameLog {
       .sort((a, b) => b.ctime - a.ctime)[0].name;
 
     if (this._lastLogFilePath !== this._prevLogFilePath) {
-      console.log(new Date(), 'gamelog: file used: ' + this._lastLogFilePath);
+      DebugLog('file used: ' + this._lastLogFilePath);
       this._prevLogFilePath = this._lastLogFilePath;
 
       if ( this._dirWatcher) {  this._dirWatcher.close(); }
 
       fs.watchFile(this._lastLogFilePath, { interval: 1000 }, () => {
-        //console.log(new Date(), 'gamelog: watchLogFromMostRecentFile: change detected');
+        //DebugLog('watchLogFromMostRecentFile: change detected');
         this.dispatchLogEvents();
       });
 
@@ -59,10 +65,12 @@ module.exports = class GameLog {
   }
 
   dispatchLogEvents() {
-    lineReader.eachLine(this._lastLogFilePath, (line, last) => {
+    lineReader.eachLine(this._lastLogFilePath, (line, ThisIsTheLastOne) => {
       const log = JSON.parse(line);
       let nextSystem;
+      let noLog;
 
+      noLog = false;
       switch (log.event) {
         case 'Loadout':
           this._currentShip = {
@@ -78,6 +86,7 @@ module.exports = class GameLog {
           if (log.JumpType === "Hyperspace") {
             this.isJumping = true;
             nextSystem = new StarSystem(log.StarSystem);
+            DebugLog('* Hyperspace!');
           }
           break;
 
@@ -86,6 +95,7 @@ module.exports = class GameLog {
         case 'CarrierJump':
           this.isJumping = false;
           this.currentSystem = new StarSystem(log.StarSystem, log.StarPos);
+          DebugLog('* NewLocation');
           break;
 
         case 'Shutdown':
@@ -93,43 +103,107 @@ module.exports = class GameLog {
           this.watchLog();
           break;
 
+        case 'Backpack'             :
+        case 'Cargo'                :
+        case 'Commander'            :
+        case 'Disembark'            :
+        case 'Docked'               :
+        case 'DockingDenied'        :
+        case 'DockingGranted'       :
+        case 'DockingRequested'     :
+        case 'Embark'               :
+        case 'EngineerProgress'     :
+        case 'Fileheader'           :
+        case 'Friends'              :
+        case 'FSDTarget'            :
+        case 'FSSAllBodiesFound'    :
+        case 'FSSBodySignals'       :
+        case 'FSSDiscoveryScan'     :
+        case 'FSSSignalDiscovered'  :
+        case 'FuelScoop'            :
+        case 'JetConeBoost'         :
+        case 'LoadGame'             :
+        case 'Materials'            :
+        case 'Missions'             :
+        case 'ModuleInfo'           :
+        case 'Music'                :
+        case 'NavRoute'             :
+        case 'Progress'             :
+        case 'Rank'                 :
+        case 'ReceiveText'          :
+        case 'RefuelAll'            :
+        case 'Reputation'           :
+        case 'ReservoirReplenished' :
+        case 'SAAScanComplete'      :
+        case 'Scan'                 :
+        case 'ScanBaryCentre'       :
+        case 'Screenshot'           :
+        case 'SendText'             :
+        case 'ShipLocker'           :
+        case 'ShipTargeted'         :
+        case 'Shipyard'             :
+        case 'ShipyardSwap'         :
+        case 'SquadronStartup'      :
+        case 'Statistics'           :
+        case 'StoredShips'          :
+        case 'SuitLoadout'          :
+        case 'Undocked'             :
+        case 'WingAdd'              :
+        case 'WingInvite'           :
+        case 'WingJoin'             :
+        case 'WingLeave'            :
+          // Do nothing
+          noLog = true;
+          break;
+
         default:
           // Do nothing
+          DebugLog('UNKNOWN EVENT: ' + log.event);
       }
 
-      if (last) {
-        if (this._currentShip && this._currentShip.shipId && this._lastShipId !== this._currentShip.shipId) {
-          //console.log(new Date(), 'ship: [ id:', this._currentShip.shipId, '| type:', this._currentShip.ship, '| name:', this._currentShip.shipName, '| ident:', this._currentShip.shipIdent, ']');
-          this._lastShipId = this._currentShip.shipId;
-
-          if (typeof this.onShipChange === 'function') {
-            this.onShipChange(this._currentShip);
+      if (ThisIsTheLastOne) {
+        if (this._currentShip) {
+DebugLog('-- ship: [ id:' + this._currentShip.shipId + '| type:' + this._currentShip.ship + '| name:' + this._currentShip.shipName + '| ident:' + this._currentShip.shipIdent + ']');
+DebugLog('-- ship: [ Last id:' + this._lastShipId, ']');
+          if (this._currentShip.shipId && this._lastShipId !== this._currentShip.shipId) {
+            this._lastShipId = this._currentShip.shipId;
+            if (typeof this.onShipChange === 'function') this.onShipChange(this._currentShip);
           }
+        }else{
+DebugLog('-- ship: No current ship!');
         }
 
         if (this.isJumping) {
-          if ((nextSystem && nextSystem.name)
-              && (!this.lastJumpSystem || (this.lastJumpSystem.name !== nextSystem.name))) {
-
-            //console.log(new Date(), 'jumping: ', nextSystem);
+          if (
+           (nextSystem && nextSystem.name) // nextSystem should exists and have a name
+           &&
+           (!this.lastJumpSystem || (this.lastJumpSystem.name !== nextSystem.name)) // and lastJumpSystem shouldn't exists or have a different name
+          ) {
+            // so, we're jumping in nextSystem.
+DebugLog('-- jumping: ' + nextSystem);
             this.lastJumpSystem = nextSystem;
-
-            if (typeof this.onJump === 'function') {
-              this.onJump(nextSystem);
-            }
+            if (typeof this.onJump === 'function') this.onJump(nextSystem);
+          }else{
+DebugLog('-- jumping: no nextSystem');
           }
 
-        } else if ((this.currentSystem && this.currentSystem.name)
-            && (!this._lastSystem || (this._lastSystem.name !== this.currentSystem.name))) {
+        } else if (
+         (this.currentSystem && this.currentSystem.name) // currentSystem should exists and have a name
+         &&
+         (!this._lastSystem || (this._lastSystem.name !== this.currentSystem.name))  // and _lastSystem shouldn't exists or have a different name
+        ) {
 
-          //console.log(new Date(), 'system:', this.currentSystem);
+DebugLog('-- system:' + this.currentSystem);
           this._lastSystem = this.currentSystem;
-
-          if (typeof this.onLocate === 'function') {
-            this.onLocate(this.currentSystem);
-          }
+          if (typeof this.onLocate === 'function') this.onLocate(this.currentSystem);
         }
-      }
-    });
+else DebugLog('-- Location: no currentSystem');
+
+      } // End of "if (ThisIsTheLastOne)"
+else{
+  if (noLog === false) DebugLog('.. This Is Not The Last One');
+}
+
+    }); // End of "lineReader"
   }
 }

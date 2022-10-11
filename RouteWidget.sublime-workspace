@@ -1,0 +1,948 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"planes",
+				"Planets_Count"
+			],
+			[
+				"hon",
+				"Honked"
+			],
+			[
+				"fss",
+				"FSS_starCount"
+			],
+			[
+				"de",
+				"DebugEvent"
+			],
+			[
+				"DSS_",
+				"DSS_bodyTotal"
+			],
+			[
+				"FSS_",
+				"FSS_planetCount"
+			],
+			[
+				"known_",
+				"known_planetCount"
+			],
+			[
+				"va",
+				"Valuable_planetCount"
+			],
+			[
+				"kn",
+				"known_starCount"
+			],
+			[
+				"fs",
+				"FSS_bodyTotal"
+			],
+			[
+				"pre",
+				"prescannedPlanets"
+			],
+			[
+				"Print",
+				"PrintOneLineObject"
+			],
+			[
+				"p",
+				"parentKey"
+			],
+			[
+				"par",
+				"parentKey"
+			],
+			[
+				"Debug",
+				"DebugComposition"
+			],
+			[
+				"a",
+				"atmosphereclass"
+			],
+			[
+				"rando",
+				"RandomResult"
+			],
+			[
+				"Rando",
+				"RandomResult"
+			],
+			[
+				"Impe",
+				"Imperiale"
+			],
+			[
+				"Hu",
+				"Humanized"
+			],
+			[
+				"Hum",
+				"Humanized"
+			],
+			[
+				"Fede",
+				"Federazione"
+			],
+			[
+				"Sets",
+				"SetSpeak"
+			],
+			[
+				"SetS",
+				"SetSpeak"
+			],
+			[
+				"scn",
+				"scansionato"
+			],
+			[
+				"indi",
+				"Indipendente"
+			],
+			[
+				"spea",
+				"SetSpeak"
+			],
+			[
+				"intere",
+				"interessanti"
+			],
+			[
+				"s_",
+				"s_Premise"
+			],
+			[
+				"candit",
+				"candidato"
+			],
+			[
+				"colum",
+				"columnspan"
+			],
+			[
+				"co",
+				"contains"
+			],
+			[
+				"scansio",
+				"scansionare"
+			],
+			[
+				"desc",
+				"description"
+			],
+			[
+				"am",
+				"atmosfera"
+			],
+			[
+				"supe",
+				"superficiale"
+			],
+			[
+				"atmos",
+				"atmosfera"
+			],
+			[
+				"pl",
+				"plural"
+			],
+			[
+				"dep",
+				"depositi"
+			],
+			[
+				"st",
+				"string\tcontext"
+			],
+			[
+				"n",
+				"glow\tfont style"
+			],
+			[
+				"s",
+				"clear_scopes\tclear_scopes:"
+			],
+			[
+				"bla",
+				"black2\tcurrent file"
+			],
+			[
+				"bl",
+				"blue\tcurrent file"
+			],
+			[
+				"yellow",
+				"yellow2\tcurrent file"
+			],
+			[
+				"o",
+				"operator\tconvention"
+			],
+			[
+				"built_in_",
+				"built_in_operators\tvariable"
+			],
+			[
+				"Joi",
+				"Joystick"
+			],
+			[
+				"hat",
+				"hatSwitchCount"
+			],
+			[
+				"_set",
+				"_set16BitValue"
+			],
+			[
+				"_axis",
+				"_axisMinimum"
+			],
+			[
+				"_axi",
+				"_axisValues"
+			],
+			[
+				"axis",
+				"axisIndex_TOTAL"
+			],
+			[
+				"Empire",
+				"Empire_logo"
+			],
+			[
+				"col",
+				"color\tproperty"
+			],
+			[
+				"C",
+				"Calibri"
+			],
+			[
+				"g",
+				"gameport"
+			],
+			[
+				"ana",
+				"analog_y"
+			],
+			[
+				"anal",
+				"analog_x"
+			],
+			[
+				"Des",
+				"DestDirectory"
+			],
+			[
+				"Saf",
+				"SafeDescr"
+			],
+			[
+				"Q",
+				"Query_Cancella"
+			],
+			[
+				"ROO",
+				"ROOTDIR"
+			],
+			[
+				"pro",
+				"progressivo"
+			],
+			[
+				"mysql_f",
+				"mysql_fetch_assoc"
+			],
+			[
+				"num",
+				"NumRows"
+			],
+			[
+				"dest",
+				"DestDirectory"
+			],
+			[
+				"val",
+				"value"
+			],
+			[
+				"Desc",
+				"Descrizione"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"Filt",
+				"FiltroAttivo"
+			],
+			[
+				"ell",
+				"elListItem"
+			],
+			[
+				"el",
+				"elList"
+			],
+			[
+				"sel",
+				"selItem"
+			],
+			[
+				"Selettore",
+				"SelettoreCartelle"
+			],
+			[
+				"_",
+				"_SESSION"
+			],
+			[
+				"prin",
+				"print_r"
+			],
+			[
+				"Rispo",
+				"Post_Risposta"
+			],
+			[
+				"Con",
+				"ConfermaOperazione"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"scope",
+				"Scope Hunter: Toggle Instant Scoper"
+			],
+			[
+				"scopeh",
+				"Scope Hunter: Toggle Instant Scoper"
+			],
+			[
+				"scc",
+				"Scope Hunter: Show Scope Under Cursor(s)"
+			],
+			[
+				"pa",
+				"Package Control: List Packages"
+			],
+			[
+				"c",
+				"CSV: Justify columns"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"scop",
+				"Scope Hunter: Toggle Instant Scoper"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"incr",
+				"Increment Selection"
+			],
+			[
+				"Scope Hunter: ",
+				"Scope Hunter: Toggle Instant Scoper"
+			],
+			[
+				"Scope Hunter: Show Scope Under Cursor",
+				"Scope Hunter: Show Scope Under Cursor(s)"
+			],
+			[
+				"p",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/F/- Games/== Elite Dangerous Stuffs ==/elite-dangerous-route-widget-1.0.0-alpha.5.1"
+	],
+	"file_history":
+	[
+		"/C/Users/Parduz/Dropbox/= Elite Dangerous Stuffs =/_REFLECT.cottle",
+		"/C/Users/Parduz/Dropbox/= Elite Dangerous Stuffs =/debug system.cottle",
+		"/C/Users/Parduz/Documents/Elite Dangerous/EDHM_UI/ODYSS/Themes/- SCHEGGIA -/Advanced.ini",
+		"/C/Users/Parduz/Documents/Elite Dangerous/EDHM_UI/ODYSS/Themes/- SCHEGGIA -/Startup-Profile.ini",
+		"/C/Users/Parduz/Documents/Elite Dangerous/EDHM_UI/ODYSS/Themes/- SCHEGGIA -/SuitHud.ini",
+		"/C/- Games/EliteDangerous/Products/elite-dangerous-odyssey-64/EDHM-ini/3rdPartyMods/ED-GT/ED-GT - Graphic Tweaks.json",
+		"/F/- Games/== Elite Dangerous Stuffs ==/- temp data -/Viaggio di ritorno.csv",
+		"/F/- Games/== Elite Dangerous Stuffs ==/- temp data -/neutron-Prungoa EF-A e5-Zandu-9B3DE086-39D3-11ED-96E3-137194EB4526.csv",
+		"/F/- Games/== Elite Dangerous Stuffs ==/- temp data -/exact-plotter-Plielau LO-X d2-69-Zandu-AFADE1B0-3933-11ED-B8B4-5FC494EB4526.csv",
+		"/C/Users/Parduz/AppData/Local/Earthstorm_Software/EliteFIPServer_Url_x3x1wky4bntmc05wn1pbot42z1lfblgh/3.0.0.0/user.config",
+		"/C/Users/Parduz/Dropbox/= Elite Dangerous Stuffs =/debug body.cottle",
+		"/F/- Games/== Elite Dangerous Stuffs ==/= MATRIC =/EliteFIPServer-3.0.0/EliteFIPServer.deps.json",
+		"/F/- Games/== Elite Dangerous Stuffs ==/= MATRIC =/EliteFIPServer-3.0.0/EliteFIPServer.runtimeconfig.json",
+		"/F/- Games/== Elite Dangerous Stuffs ==/= MATRIC =/EliteFIPServer-3.0.0/ButtonTextConfig.json",
+		"/F/- Games/== Elite Dangerous Stuffs ==/= MATRIC =/EliteFIPServer-3.0.0/NLog.config",
+		"/C/Users/Parduz/Dropbox/= Elite Dangerous Stuffs =/classi",
+		"/E/REFLEXIVE GAMES/Big Kahuna Reef 3/Data/Resources/Interface/Beat Challenge Screen.foo",
+		"/E/REFLEXIVE GAMES/Big Kahuna Reef/data2.dat",
+		"/F/- Games/== Elite Dangerous Stuffs ==/elite-dangerous-route-widget-1.0.0-alpha.5.1/src/server/Route.js",
+		"/F/- Games/== Elite Dangerous Stuffs ==/elite-dangerous-route-widget-1.0.0-alpha.5.1/src/client/widgets/route/app.js",
+		"/F/- Games/== Elite Dangerous Stuffs ==/elite-dangerous-route-widget-1.0.0-alpha.5.1/src/server/GameLog.js",
+		"/F/- Games/= EPIC =/PillarsOfEternity/win/SweetFX/SweetFX_Settings.txt",
+		"/F/- Games/= EPIC =/PillarsOfEternity/win/PillarsOfEternity_Data/Managed/IE MOD/settings.pw.xml",
+		"/F/- Games/= EPIC =/PillarsOfEternity/win/PillarsOfEternity_Data/Managed/IE MOD/PatchworkLauncher.exe.config",
+		"/C/Users/Parduz/Documents/MATRIC/decks/caaf0f18-9bb8-4190-b6f5-9593e9a64fe0/deck2 - Formatted.json",
+		"/C/Users/Parduz/Documents/MATRIC/decks/caaf0f18-9bb8-4190-b6f5-9593e9a64fe0/deck2.json",
+		"/C/- Games/EliteDangerous/Products/elite-dangerous-odyssey-64/EDHM-ini/3rdPartyMods/Keybindings.json",
+		"/C/- Games/EliteDangerous/Products/elite-dangerous-odyssey-64/EDHM-ini/3rdPartyMods/Keybindings - Copy.json",
+		"/C/Users/Parduz/AppData/Roaming/Sublime Text 3/Packages/Cottle/DeathaxeCottle.sublime-settings",
+		"/C/Users/Parduz/AppData/Roaming/Sublime Text 3/Packages/Cottle/DeathaxeCottle.sublime-syntax",
+		"/C/Users/Parduz/AppData/Roaming/Sublime Text 3/Packages/Cottle/cottle.sublime-color-scheme",
+		"/F/- Games/== Elite Dangerous Stuffs ==/EDDI Scripts/Jump and Star-System Report.cottle",
+		"/C/Users/Parduz/AppData/Roaming/EDDI/personalities/darkcyde's defaults - 21-12-21.json.cottle",
+		"/C/Users/Parduz/AppData/Roaming/EDDI/personalities/- roba vecchia -/eddi ITA enum.json.cottle",
+		"/C/Users/Parduz/AppData/Roaming/EDDI/personalities/darkcyde's defaults - ITA.json.cottle",
+		"/C/Users/Parduz/AppData/Roaming/EDDI/personalities/darkcyde's defaults - ITA OLD.json.cottle",
+		"/C/Users/Parduz/AppData/Roaming/EDDI/personalities/darkcyde's defaults - 11-09-21.json.cottle",
+		"/C/Users/Parduz/Dropbox/= Elite Dangerous Stuffs =/Darkcyde's Defaults - 21-12-21/Change Logs/Change Log 3 - After Odyssey Launch.txt",
+		"/C/Users/Parduz/AppData/Local/EDMarketConnector/plugins/EDR/config/user_sfx_config.v1.ini",
+		"/C/Users/Parduz/AppData/Local/EDMarketConnector/plugins/EDR/config/sfx_config.v1.ini",
+		"/C/Users/Parduz/AppData/Local/Temp/EDMarketConnector/EDMarketConnector-debug.log",
+		"/C/Users/Parduz/AppData/Local/EDMarketConnector/plugins/EDR/config/igm_config.v7.ini",
+		"/C/Users/Parduz/AppData/Local/EDMarketConnector/plugins/EDR/config/config.ini",
+		"/C/Users/Parduz/vlc-delete.lua",
+		"/F/- Games/== Elite Dangerous Stuffs ==/EDScout/static/icons/flaticon.css",
+		"/F/- Games/== Elite Dangerous Stuffs ==/EDScout/templates/index.html",
+		"/C/Users/Parduz/Dropbox/all passwords.csv",
+		"/F/- Games/== Elite Dangerous Stuffs ==/EDScout/static/style.css",
+		"/C/- Games/EliteDangerous/_AUTOSTART_/ELITE DANGEROUS AUTOSTART.bat",
+		"/F/- Games/== Elite Dangerous Stuffs ==/= SETUPS =/EDScout/static/style.css",
+		"/F/- Games/== Elite Dangerous Stuffs ==/- RAW GRIND DB =/get-sqlitebiter.ps1",
+		"/F/- Games/== Elite Dangerous Stuffs ==/- RAW GRIND DB =/convert.log",
+		"/F/- Games/== Elite Dangerous Stuffs ==/- RAW GRIND DB =/dadroid corta.csv",
+		"/F/- Games/== Elite Dangerous Stuffs ==/- RAW GRIND DB =/ProvaCorta.csv",
+		"/F/- Games/== Elite Dangerous Stuffs ==/- RAW GRIND DB =/PlanetsLandableWithVolcanism250LyFromSol.json",
+		"/F/- Games/== Elite Dangerous Stuffs ==/- RAW GRIND DB =/PlanetsLandableWithVolcanism250LyFromColonia.json",
+		"/F/- Games/== Elite Dangerous Stuffs ==/- RAW GRIND DB =/PlanetsLandableWithVolcanism250LyFromColonia.csv",
+		"/F/- Games/== Elite Dangerous Stuffs ==/- RAW GRIND DB =/PlanetsLandableWithVolcanism250LyFromColonia_2.csv",
+		"/F/- Games/== Elite Dangerous Stuffs ==/= EDDB Extension =/Selenium.csv",
+		"/C/Users/Parduz/.config/legendary/assets.json",
+		"/C/Users/Parduz/.config/legendary/version.json",
+		"/C/Users/Parduz/.config/legendary/user.json",
+		"/C/Users/Parduz/.config/legendary/installed.json",
+		"/S/__MUSICA/__VSTPlugins/Reveal Sound/Spire 1.5.7/User Banks/OLD COLLECTION/dirlist.bat",
+		"/M/= SETUPS FOLDER =/= VST =/== CRACKED ==/- Synths -/= REVEAL SOUND =/= SPIRE =/Axiomatic Universe Spire Bankollection v3.0/rinomina.bat",
+		"/C/Program Files (x86)/Microsoft Keyboard Layout Creator 1.4/inc/kbd.h",
+		"/C/Users/Parduz/Documents/Keyboard Layout Italiano Esteso/Keyboard Layout Italiano Esteso 2.klc",
+		"/C/Users/Parduz/AppData/Roaming/EDDI/personalities/darkcyde's defaults - ITA.json",
+		"/C/Users/Parduz/AppData/Roaming/EDDI/personalities/darkcyde's defaults - 11-09-21.json",
+		"/C/Users/Parduz/AppData/Roaming/EDDI/personalities/darkcyde's defaults - 21-12-21.json",
+		"/E/_WIN10_LITE_MAKING_TOOL_/Toolkit_v12.0/Start.cmd",
+		"/C/Users/Parduz/AppData/Roaming/EDEngineer/engineering.shoppingList per CICCIO AFK.shoppingList",
+		"/F/- Games/== Elite Dangerous Stuffs ==/- temp data -/ENGENEERING - Lista Mods e Specials",
+		"/F/- Games/== Elite Dangerous Stuffs ==/- temp data -/ENGENEERING - Lista Mods e Ingegneri.txt",
+		"/F/- Games/== Elite Dangerous Stuffs ==/- temp data -/ENGENEERING - Lista Ingegneri e mods",
+		"/F/- Games/== Elite Dangerous Stuffs ==/= GUIDA INGEGNERI =/2019-07-31-speedguide-ingegneri-parte1.md",
+		"/C/Users/Parduz/AppData/Roaming/EDDI/personalities/eddi ita.json.cottle",
+		"/C/Users/Parduz/AppData/Roaming/EDDI/personalities/eddi ITA enum.json.cottle",
+		"/F/- Games/== Elite Dangerous Stuffs ==/- RAW GRIND DB =/out.sqlite",
+		"/F/- Games/== Elite Dangerous Stuffs ==/= EDDB Extension =/Materials.csv",
+		"/F/- Games/== Elite Dangerous Stuffs ==/= EDDB Extension =/Se_Planets_Near_Zandu.csv",
+		"/C/Users/Parduz/AppData/Local/Frontier Developments/Elite Dangerous/Options/Bindings/StartPreset.start",
+		"/F/- Games/== Elite Dangerous Stuffs ==/= EDDB Extension =/systems-2021-11-27_23.jsonl",
+		"/F/- Games/== Elite Dangerous Stuffs ==/= EDDB Extension =/SeleniumPlanetsZandu.csv",
+		"/C/Users/Parduz/AppData/Roaming/EDDI/personalities/eddi4.0.1.json.cottle",
+		"/C/Users/Parduz/AppData/Roaming/EDDI/eddi.log",
+		"/C/Users/Parduz/AppData/Roaming/EDDI/eddi1.log",
+		"/C/Users/Parduz/AppData/Roaming/EDDI/eddi9.log",
+		"/C/Users/Parduz/AppData/Roaming/EDDI/personalities/Elenco conversioni da json a cottle.re",
+		"/C/Users/Parduz/AppData/Roaming/EDDI/personalities/ConvertJsonToCottle.ps1",
+		"/M/= SETUPS FOLDER =/= VST =/== CRACKED ==/= Tone2 =/Tone2/SymLink Installer.cmd",
+		"/F/- Games/Freeways/save/059.lev",
+		"/C/Users/Parduz/Documents/Arduino/theme/tauno-dark-theme/theme.txt",
+		"/C/Users/Parduz/Documents/Arduino/theme/tauno-dark-theme/syntax/default.xml",
+		"/C/Users/Parduz/Documents/Arduino/libraries/Adafruit_GFX_Library/Adafruit_GFX.h",
+		"/C/Users/Parduz/Documents/Arduino/libraries/Adafruit_GFX_Library/Adafruit_GFX.cpp",
+		"/C/Users/Parduz/Documents/Arduino/theme/tauno-dark-theme/theme.properties",
+		"/C/Users/Parduz/Videos/Long/join.bat",
+		"/C/Users/Parduz/Videos/Long/dd.txt",
+		"/C/Users/Parduz/Videos/Premiazione Senior/dd.txt",
+		"/C/Users/Parduz/Videos/Premiazione Senior/join.bat",
+		"/C/Users/Parduz/Videos/File vari/join.bat",
+		"/F/- Games/Freeways/save/031.lev",
+		"/C/Users/Parduz/Dropbox/viaggio.flp",
+		"/S/__MUSICA/_FLSTUDIO_User_Data_Folder_/FL Studio/Presets/Plugin database/Generators/Synth/Nexus3.fst",
+		"/S/__MUSICA/_FLSTUDIO_User_Data_Folder_/FL Studio/Presets/Plugin database/Generators/= Synths =/Romplers/Nexus 3.fst",
+		"/C/Users/Parduz/AppData/Roaming/EDDI/personalities/eddi ita.json",
+		"/C/Users/Parduz/Dropbox/__MUSICA__/Proclethya - Key and Order.html",
+		"/C/Users/Parduz/AppData/Roaming/EDDI/speechresponder.out",
+		"/C/Users/Parduz/AppData/Roaming/Sublime Text 3/Packages/Cottle/modified script.cottle",
+		"/C/Users/Parduz/AppData/Roaming/EDDI/personalities/eddi4.it.json.cottle",
+		"/C/Users/Parduz/AppData/Roaming/EDDI/personalities/eddi4.it.cottle",
+		"/C/Users/Parduz/AppData/Roaming/EDDI/personalities/eddi4.en.json",
+		"/C/Users/Parduz/AppData/Roaming/EDDI/personalities/eddi ITA enum.json",
+		"/C/Users/Parduz/AppData/Roaming/Sublime Text 3/Packages/Cottle/sample.cottle",
+		"/C/Users/Parduz/AppData/Local/EDMarketConnector/plugins/exploration-progress-1.0.3/load.py",
+		"/C/Users/Parduz/AppData/Local/EDMarketConnector/plugins/SpanshRouter/load.py",
+		"/C/Users/Parduz/AppData/Local/EDMarketConnector/plugins/EDMC-FuelStatus-release/load.py",
+		"/C/Users/Parduz/Dropbox/PrintableHeroes Auto-Downloader (1).user.js",
+		"/S/__MUSICA/__VSTPlugins/Plogue/HKLM Plogue.reg",
+		"/S/__MUSICA/__VSTPlugins/Plogue/Plogue.reg",
+		"/D/MISC/card",
+		"/C/Users/Parduz/AppData/Roaming/EDDI/personalities/eddi.en.edit.cottle",
+		"/C/Users/Parduz/AppData/Roaming/EDDI/personalities/eddi.it.json",
+		"/F/- Games/== Elite Dangerous Stuffs ==/EDDI/eddi.json",
+		"/C/Users/Parduz/AppData/Local/Frontier Developments/Elite Dangerous/Options/Bindings/Thrustmaster Horizons.3.0.binds",
+		"/C/- Games/EliteDangerous/logs/Client.log",
+		"/F/- Games/= EPIC =/EliteDangerous/Products/elite-dangerous-odyssey-64/Win64/data.ovx"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 430.0,
+		"where_history":
+		[
+			"C:\\Users\\Parduz\\AppData\\Roaming\\EDDI\\personalities\\",
+			"C:\\Users\\Parduz\\Documents\\= FTP DARKRAGE = OOLD\\_Originale_\\",
+			"C:\\Users\\Parduz\\Documents\\= FTP DARKRAGE =\\_PARDUZ_2020_",
+			"C:\\Users\\Parduz\\Documents\\= FTP DARKRAGE = OOLD\\_Originale_\\",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"(x.+ =)0.0232(\\n.+\\ny.+ =)0.402(\\n.+\\nz.+ =)0.0685",
+			"line",
+			"upper",
+			"42",
+			"\"",
+			",.*",
+			"conosciut",
+			"scan_AllStars",
+			"system_StarsOnly",
+			"DSS",
+			"DSS_alreadyCount",
+			"scan_AlreadyDiscovered",
+			"Valuable_planetCount",
+			"FirstDSS_planetCount",
+			"DSS_alreadyCount",
+			"DSS_planetCount",
+			"FSS_planetCount",
+			"FSS_starCount",
+			"FSS_bodyTotal",
+			"known_starCount",
+			"Stars_Count",
+			"known_bodyTotal",
+			"DSS_bodyTotal",
+			"Notified_planetCount",
+			"FirstDSS_planetCount",
+			"scannedPlanets",
+			"prescannedPlanets",
+			"scan_AlreadyDiscovered",
+			"JustStars",
+			"DSS_bodyTotal",
+			"DebugSystem",
+			"reportSystem",
+			"mappedBodies",
+			":n3",
+			"FSS_bodyCount",
+			"honk_bodyCount",
+			"known_bodyCount",
+			"valuable",
+			"toFirstMap",
+			"DSS_bodyCount",
+			"preFSS_starCount",
+			"scannedStars",
+			"alreadymappedBodies",
+			"scannedBodies",
+			"HonkedBodies",
+			"prescannedBodies",
+			"prescannedPlanets",
+			"prescannedBodies",
+			"OnOff",
+			"body_types",
+			"body_count",
+			"mappedBodies",
+			"conosciamo soltanto",
+			"mappedBodies",
+			"mapped",
+			"PrintBasicClass",
+			"Log:function",
+			"Log:function ",
+			"baseClassString",
+			"cur",
+			"\"(\\w+)\"",
+			"tmpString",
+			"(\"rock\")",
+			"(\"ice\")",
+			" 0,",
+			", ",
+			"(\\d:)",
+			", ",
+			"\\]",
+			"\\], ",
+			"[] [] [",
+			"List",
+			"//",
+			" +/// +",
+			"\\n\\n",
+			"((///.+)\\n)*(public|private) (\\w+.*) (.+)",
+			"((///.+)\\n)*(public|private) (\\w+\\?*) (.+)",
+			"///",
+			"\\[PublicAPI, JsonIgnore, Obsolete",
+			"\\[JsonIgnore\\]\\n",
+			"\\[PublicAPI\\]\\n",
+			"\\[PublicAPI, JsonProperty\\]",
+			" =.+;",
+			" {.+}",
+			"\\[PublicAPI, JsonIgnore\\].*\\n",
+			"</*summary>",
+			"'#-#'",
+			"list",
+			"\\[PublicAPI, JsonIgnore, (.+\\]) (\\(\\w+.*\\))",
+			"\\[PublicAPI\\] (\\(\\w+.*\\))",
+			"\\[PublicAPI\\] (\\(\\w+\\))",
+			"//",
+			"///\\(",
+			"///",
+			"\\n\\n",
+			"^(///.*\\n)(.+)\\n",
+			"^(public|private) (.+?) (.+)",
+			"^(///.+)\\n(public|private) (.+?) ",
+			"\\[PublicAPI, JsonIgnore\\] ",
+			"distanceLs",
+			"\\[PublicAPI, JsonIgnore\\]\\n",
+			"^(///.+)\\npublic (.+?) ",
+			" =>.*",
+			"^(///.+)\\n(\\[.*)\\n",
+			"</*summary>",
+			" {.+}",
+			"bodyType",
+			"Vibrance",
+			"USE_VIBRANCE",
+			"\\r\\n",
+			"\\n\\r",
+			"rn§",
+			"nr§",
+			", relative.*",
+			" - (.*)",
+			"nr§",
+			" nr§",
+			" - (.*)",
+			"  +",
+			"last",
+			"Loadout",
+			"^.+event:  (.+)",
+			"dss",
+			"(\"FontFace\": \").+(\",)",
+			"euro",
+			"run",
+			"run and jump",
+			"system"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"\\10.5776\\20.305\\30.003",
+			"",
+			"SAA",
+			"DebugSystem",
+			":D3",
+			"FSS_bodyTotal",
+			"honk_bodyTotal",
+			"known_bodyTotal",
+			"Valuable_planetCount",
+			"FirstDSS_planetCount",
+			"DSS_planetCount",
+			"known_starCount",
+			"FSS_starCount",
+			"DSS_bodyCount",
+			"FSS_bodyCount",
+			"honk_bodyCount",
+			"known_bodyCount",
+			"'\\1'",
+			"\\1  ",
+			" \\1  ",
+			" 00.00,",
+			",\\t",
+			"\\n\\1",
+			",\\t",
+			"\\]\\n",
+			"\\],\\n",
+			"                                                                           {_ ",
+			"\\n",
+			"\\5 \\2 (\\4) _}",
+			"/// [Obsolete",
+			"",
+			"char('10')",
+			"\\2 [\\1                       ",
+			"\\1 [\\2                       ",
+			"\\1            ",
+			"\\1           ",
+			"/// (",
+			"                                                                ///",
+			"\\n",
+			"\\2 \\1",
+			"\\3 ///(\\2)",
+			"\\1 (\\3)\\n",
+			"/",
+			"",
+			"\\1 (\\2)\\n",
+			"\\1 (\\2)",
+			"",
+			"\\1 \\2\\n",
+			"",
+			"#-#",
+			"\\n§",
+			"                                                        {_ \\1 _}",
+			"\\n§",
+			" {_ \\1 _}",
+			"",
+			"\\t\\tcase '\\1'                                       :",
+			"\\1Eurostile\\2",
+			"bodyType.invariantName",
+			"",
+			"                                   §§,",
+			"                                                                   §§,",
+			"                                                                   ,",
+			",\\n`",
+			"_",
+			",\\n",
+			",\\h",
+			"\\2",
+			"\\1",
+			"move ",
+			"mkdir \\1\"",
+			"move ",
+			" ",
+			"'\\1'",
+			"set PassedNumber to \\1}{F('_Italianise')",
+			"set PassedNumber to \\1\\}\\{_Italianise",
+			"\\1'\\2'",
+			"F('\\1')",
+			"\\3 \\2\\1\\n--\\1\\n",
+			"\\n\\3 \\2\\1\\n--\\1\\n",
+			"\\n\\3 \\2\\1\\n\\1\\n",
+			"\\n\\1\\n",
+			"\\n\\1",
+			"",
+			"\\n",
+			"",
+			"\\n",
+			"",
+			"\\n",
+			"\\n<op",
+			"",
+			"\\n",
+			"\\1\\t",
+			"Vanadium",
+			"Tin",
+			"Mercury",
+			"Polonium",
+			"Molybdenum",
+			"Niobium",
+			"Ruthenium",
+			"Technetium",
+			"Tellurium",
+			"\tTungsten\t",
+			"\tYttrium\t",
+			"Zinc",
+			"Zirconium",
+			"Carbon",
+			"Cadmium",
+			"Arsenic",
+			"Antimony",
+			"\\n\\1\\t",
+			"\\n\\1\\n",
+			"\\t",
+			"\\t\\1\\t",
+			"\\t",
+			"\\t\\1\\t",
+			"\\t",
+			"\\t\\1\\t",
+			"\\t",
+			"\"Impero\"",
+			"\"Libero\"",
+			"ThisSystemAllegiance",
+			"LastSystemAllegiance",
+			"reportsystem",
+			"' '",
+			"''",
+			"'starsystem'",
+			"\\1\\\\r\\\\n{Voice( event.type , \\\\\"Microsoft David\\\\\")}",
+			"\\1\\\\r\\\\n{Voice({event.type},\\\\\"Microsoft David\\\\\")}"
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 158.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.scopehunter.results":
+	{
+		"height": 0.0
+	},
+	"output.stino_build_panel":
+	{
+		"height": 339.0
+	},
+	"output.stino_panel":
+	{
+		"height": 168.0
+	},
+	"pinned_build_system": "",
+	"project": "RouteWidget.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 295.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 3
+	}
+}

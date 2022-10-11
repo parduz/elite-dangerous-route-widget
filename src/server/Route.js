@@ -1,5 +1,10 @@
 const fs = require('fs');
 
+function DebugLog(dbgStr) {
+	//console.log( new Date(), '- - - Route.js - ', dbgStr);
+	console.log('- - - Route.js - ', dbgStr);
+}
+
 module.exports = class Route {
   filename;
   steps;
@@ -7,6 +12,7 @@ module.exports = class Route {
 
   constructor(filename) {
     this.filename = filename;
+DebugLog('Route class filename:' + filename);
   }
 
   watchFile() {
@@ -18,20 +24,21 @@ module.exports = class Route {
       if (watchTimeout) { clearTimeout(watchTimeout); } // prevent duplicated watch notifications
 
       watchTimeout = setTimeout(() => {
-        //console.log(new Date(), 'watchRoute: change detected');
+DebugLog('watchRoute: change detected');
         this.updateFromFile();
       }, 100);
     });
   }
 
   updateFromFile() {
+DebugLog('updateFromFile()');
     this.steps = JSON.parse(fs.readFileSync(this.filename)).Route;
-    //console.log(new Date(), 'route:', this.steps.length -1, 'steps');
-
+DebugLog(this.steps.length -1 + 'steps');
     this.update();
   }
 
   update() {
+DebugLog('update()');
     if (typeof this.onChange === 'function') {
       this.onChange(this.steps);
     }
@@ -45,11 +52,12 @@ module.exports = class Route {
         remainingJump = this.steps.length -1 - index;
       }
     });
-
+DebugLog('remainingJump:' + remainingJump);
     return remainingJump;
   }
 
   getStepByName(name) {
+DebugLog('getStepByName');
     return this.steps.find(step => step.StarSystem === name);
   }
 }

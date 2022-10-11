@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8a707286-b493-41f1-aa0c-43e0b31f5bda}</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartupFile>src\server\index.js</StartupFile>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">17.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ScriptArguments>C:/Users/Parduz/AppData/Roaming/elite-dangerous-route-widget</ScriptArguments>
+    <StartWebBrowser>False</StartWebBrowser>
+    <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Content Include="CHANGELOG.txt" />
+    <Content Include="LICENSE.txt" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Content Include="assets\edrw-inkscape.svg" />
+    <Content Include="assets\edrw-optimized.svg" />
+    <Content Include="assets\edrw-rounded-box-optimized.svg" />
+    <Content Include="build\icon.png" />
+    <Content Include="tests\index.js" />
+    <Content Include="tools\doc-layout.html" />
+    <Content Include="tools\build.js" />
+    <Content Include="assets\docs\edrw-banner-text-converted.png" />
+    <Content Include="assets\docs\edrw-banner-text-converted.svg" />
+    <Content Include="assets\docs\edrw-banner.svg" />
+    <Content Include="assets\fonts\README.txt" />
+    <Content Include="docs\gifs\compact.gif" />
+    <Content Include="docs\gifs\example.gif" />
+    <Content Include="docs\images\controls.png" />
+    <Content Include="docs\images\legend.png" />
+    <Content Include="docs\images\move-n-resize.png" />
+    <Content Include="docs\images\obs-settings.png" />
+    <Content Include="docs\images\theme-color.png" />
+    <Content Include="docs\images\vertical-layout.png" />
+    <Content Include="docs\images\overlay-obs-skew.jpg" />
+    <Content Include="docs\images\overlay-obs.jpg" />
+    <Content Include="docs\images\edrw-banner-text-converted.svg" />
+    <Content Include="src\server\EdsmExpedition.js" />
+    <Content Include="src\server\GameLog.js" />
+    <Content Include="src\server\GameStatus.js" />
+    <Content Include="src\server\index.js" />
+    <Content Include="src\server\preload.js" />
+    <Content Include="src\server\Route.js" />
+    <Content Include="src\server\StarSystem.js" />
+    <Content Include="src\server\Stats.js" />
+    <Content Include="src\server\utils.js" />
+    <Content Include="src\server\WindowManager.js" />
+    <Content Include="src\client\controls\index.html" />
+    <Content Include="src\client\controls\app.js" />
+    <Content Include="src\client\controls\modules\Gui.js" />
+    <Content Include="src\client\controls\styles\base.css" />
+    <Content Include="src\client\controls\styles\config-panel.css" />
+    <Content Include="src\client\controls\styles\inputs.css" />
+    <Content Include="src\client\controls\styles\vars.css" />
+    <Content Include="src\client\controls\assets\favicon\android-chrome-192x192.png" />
+    <Content Include="src\client\controls\assets\favicon\android-chrome-512x512.png" />
+    <Content Include="src\client\controls\assets\favicon\apple-touch-icon.png" />
+    <Content Include="src\client\controls\assets\favicon\favicon-16x16.png" />
+    <Content Include="src\client\controls\assets\favicon\favicon-32x32.png" />
+    <Content Include="src\client\controls\assets\favicon\mstile-144x144.png" />
+    <Content Include="src\client\controls\assets\favicon\mstile-150x150.png" />
+    <Content Include="src\client\controls\assets\favicon\mstile-310x150.png" />
+    <Content Include="src\client\controls\assets\favicon\mstile-310x310.png" />
+    <Content Include="src\client\controls\assets\favicon\mstile-70x70.png" />
+    <Content Include="src\client\controls\assets\favicon\favicon.ico" />
+    <Content Include="src\client\controls\assets\favicon\safari-pinned-tab.svg" />
+    <Content Include="src\client\controls\assets\favicon\browserconfig.xml" />
+    <Content Include="src\client\controls\assets\icons\link.svg" />
+    <Content Include="src\client\widgets\route\index.html" />
+    <Content Include="src\client\widgets\route\app.js" />
+    <Content Include="src\client\widgets\route\modules\Gui.js" />
+    <Content Include="src\client\widgets\route\modules\handles.js" />
+    <Content Include="src\client\widgets\route\modules\Info.js" />
+    <Content Include="src\client\widgets\route\modules\Route.js" />
+    <Content Include="src\client\widgets\route\modules\System.js" />
+    <Content Include="src\client\widgets\route\modules\utils.js" />
+    <Content Include="src\client\widgets\route\styles\base.css" />
+    <Content Include="src\client\widgets\route\styles\gui.css" />
+    <Content Include="src\client\widgets\route\styles\handles.css" />
+    <Content Include="src\client\widgets\route\styles\info.css" />
+    <Content Include="src\client\widgets\route\styles\route.css" />
+    <Content Include="src\client\widgets\route\styles\vars.css" />
+    <Content Include="src\client\widgets\route\assets\favicon\android-chrome-192x192.png" />
+    <Content Include="src\client\widgets\route\assets\favicon\android-chrome-512x512.png" />
+    <Content Include="src\client\widgets\route\assets\favicon\apple-touch-icon.png" />
+    <Content Include="src\client\widgets\route\assets\favicon\favicon-16x16.png" />
+    <Content Include="src\client\widgets\route\assets\favicon\favicon-32x32.png" />
+    <Content Include="src\client\widgets\route\assets\favicon\mstile-144x144.png" />
+    <Content Include="src\client\widgets\route\assets\favicon\mstile-150x150.png" />
+    <Content Include="src\client\widgets\route\assets\favicon\mstile-310x150.png" />
+    <Content Include="src\client\widgets\route\assets\favicon\mstile-310x310.png" />
+    <Content Include="src\client\widgets\route\assets\favicon\mstile-70x70.png" />
+    <Content Include="src\client\widgets\route\assets\favicon\favicon.ico" />
+    <Content Include="src\client\widgets\route\assets\favicon\safari-pinned-tab.svg" />
+    <Content Include="src\client\widgets\route\assets\favicon\browserconfig.xml" />
+    <Content Include="tests\edsmMock\api.json" />
+    <Content Include="tests\edsmMock\api.routes.json" />
+    <Content Include="tests\fixtures\NavRoute.json" />
+    <Content Include="tests\fixtures\Status.json" />
+    <Content Include="tests\edsmMock\public\expedition.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="assets" />
+    <Folder Include="assets\docs" />
+    <Folder Include="assets\fonts" />
+    <Folder Include="build" />
+    <Folder Include="docs" />
+    <Folder Include="docs\gifs" />
+    <Folder Include="docs\images" />
+    <Folder Include="docs\videos" />
+    <Folder Include="EDRW" />
+    <Folder Include="src" />
+    <Folder Include="src\client" />
+    <Folder Include="src\client\controls" />
+    <Folder Include="src\client\controls\assets" />
+    <Folder Include="src\client\controls\assets\favicon" />
+    <Folder Include="src\client\controls\assets\icons" />
+    <Folder Include="src\client\controls\modules" />
+    <Folder Include="src\client\controls\styles" />
+    <Folder Include="src\client\widgets" />
+    <Folder Include="src\client\widgets\route" />
+    <Folder Include="src\client\widgets\route\assets" />
+    <Folder Include="src\client\widgets\route\assets\favicon" />
+    <Folder Include="src\client\widgets\route\modules" />
+    <Folder Include="src\client\widgets\route\styles" />
+    <Folder Include="src\server" />
+    <Folder Include="tests" />
+    <Folder Include="tests\edsmMock" />
+    <Folder Include="tests\edsmMock\public" />
+    <Folder Include="tests\fixtures" />
+    <Folder Include="tools" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

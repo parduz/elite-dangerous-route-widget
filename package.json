@@ -12,6 +12,8 @@
   },
   "scripts": {
     "start": "electron .",
+    "debug": "electron --trace-warnings .",
+    "server": "node ./src/server C:/Users/Parduz/AppData/Roaming/elite-dangerous-route-widget",
     "test": "node ./tests",
     "pack": "electron-builder --dir",
     "dist": "npm-run-all dist:*",
@@ -23,8 +25,10 @@
   "author": "Yori Mirano <yori.mirano@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "browserify": "^17.0.0",
     "express": "^4.17.1",
     "glob": "^7.1.6",
+    "helmet": "^6.0.0",
     "line-reader": "^0.4.0",
     "node-html-parser": "^3.3.0",
     "open": "^8.0.9",

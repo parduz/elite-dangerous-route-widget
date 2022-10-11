@@ -6,6 +6,11 @@ const regex = {
   lang: /^\/(\w{2})\//
 }
 
+function DebugLog(dbgStr) {
+	//console.log( new Date(), '- - - EdsmExpedition.js - ', dbgStr);
+	console.log('- - - EdsmExpedition.js - ', dbgStr);
+}
+
 module.exports = class EdsmExpedition {
   url;
   apiUrl;
@@ -62,6 +67,7 @@ module.exports = class EdsmExpedition {
   }
 
   fetchWaypoints() {
+    /*
     return new Promise(resolve => {
       this.getHtmlPageContent().then(({data}) => {
         const dom       = parse(data);
@@ -73,7 +79,7 @@ module.exports = class EdsmExpedition {
         waypoints.forEach(waypoint => query += `&systemName[]=${waypoint.name}`);
 
         fetch(query).then(response => {
-          console.log('edsm api rate limite - remaining:', response.headers['x-rate-limit-remaining'], '/', response.headers['x-rate-limit-limit'], '( reset: ', response.headers['x-rate-limit-reset'], ')');
+          DebugLog('edsm api rate limite - remaining:' + response.headers['x-rate-limit-remaining'] + '/' + response.headers['x-rate-limit-limit'] + '( reset: ' + response.headers['x-rate-limit-reset'] + ')');
           const waypointsFromEdsm = JSON.parse(response.data);
 
           waypoints.forEach(waypoint => {
@@ -88,6 +94,8 @@ module.exports = class EdsmExpedition {
         });
       })
     });
+    */
+    return;
   }
 
   getTotalDistance() {
